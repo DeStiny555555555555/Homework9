@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,9 +38,11 @@ public class Main {
         System.out.println(avg);
         System.out.println("Задание 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i2 = reverseFullName.length - 1; i2 >= 0; i2--) {
-            System.out.print(reverseFullName[i2]);
+        for (int i2 = 0; i2 < reverseFullName.length /2; i2++) {
+            char temp = reverseFullName[i2];
+            reverseFullName[i2] = reverseFullName[reverseFullName.length - 1 - i2];
+            reverseFullName[reverseFullName.length - 1 - i2] = temp;
         }
-        System.out.println();
+        System.out.println(Arrays.toString(reverseFullName));
     }
 }
